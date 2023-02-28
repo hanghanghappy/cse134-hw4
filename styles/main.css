@@ -1,0 +1,211 @@
+/* CSS for All Pages */
+*{
+    font-family: Arial, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;  
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px solid black;
+    background-color: red;
+    font-size: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > a{
+    padding: 3vh;
+    border-right: 3px solid black;
+    display: inline-block;
+}
+header > h1{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3vh;
+}
+main{
+    padding-bottom: 50px;
+    text-align: center;
+}
+footer{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+}
+
+/* CSS for Home Page */
+#home-page{
+    padding: 20px;
+    text-align: center;
+}
+#home-page ol{
+    margin: 10px 2em 10px 0;
+    list-style-position: inside;
+}
+nav{
+    margin: 20px;
+    text-align: center;
+    background-color: rgb(255, 80, 80);
+}
+nav a{
+    border: 3px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 10px 20px 10px 0;
+    display: inline-block;
+}
+nav img{
+    padding-top: 2rem;
+    width: 50px;
+    height: 50px;
+}
+nav h3{
+    margin-top: 0;
+}
+
+/* CSS for About Me */
+#about-me-pic{
+    padding: 20px;
+}
+#about-me-text{
+    margin-left: 20px;
+    margin-right: 20px;
+    list-style-position: inside;
+}
+#about-me-text ul{
+    padding-right: 20px;
+}
+video{
+    padding: 10px;
+}
+@media screen and (max-width: 768px) {
+    video {
+      width: 75%;
+    }
+}
+audio{
+    padding: 10px;
+}
+
+
+/* CSS for Projects */
+#projects{
+    font-size: 20px;
+    list-style-type: none;
+}
+pre{
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+#projects ul{
+    margin: 0;
+    padding: 0; 
+}
+#projects li{
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #dfdfdf;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(179, 159, 159, 0.1);
+}
+
+/* CSS for Experience */
+caption{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+table {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+details{
+    font-size: 20px;
+}
+
+/* CSS for Resume */
+#resume{
+    padding-bottom: 60px;
+}
+iframe {
+    width: 99%;
+    height: 150vh;
+}
+
+/* CSS for Contact */
+#contact{
+    text-align: left;
+}
+canvas{
+    margin: 20px;
+}
+@media screen and (min-width: 768px) {
+    canvas {
+        width: 15%;
+    }
+}
+form {
+    max-width: 300px;
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+input, select, textarea {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+textarea{
+    resize: vertical;
+}
+form button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+} 
+form button:hover {
+    background-color: rgb(184, 0, 0);
+}
+  
