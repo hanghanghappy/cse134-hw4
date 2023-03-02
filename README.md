@@ -6,4 +6,4 @@ The JavaScript files are in the javascript folder.
 
 Solution: [https://peppy-cupcake-d74996.netlify.app/](https://peppy-cupcake-d74996.netlify.app/)
 
-[Links](./link.md)
+[Links to solutions](./link.md)
