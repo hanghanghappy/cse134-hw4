@@ -10,11 +10,13 @@ function post_init(title, date, summary){
     post_text.title = title;
     post_text.innerHTML = `${title} (${date})` + "<br>" +  `${summary}`;
 
+    // Styling for the edit and delete buttons
     const edit_button = document.createElement("button");
     edit_button.style.backgroundImage = 'url("images/pencil.png")'; 
     edit_button.style.width = "25px";
     edit_button.style.height = "25px";
     edit_button.style.backgroundColor = "white";
+    edit_button.style.marginRight = "10px";
     const delete_button = document.createElement("button");
     delete_button.style.backgroundImage = 'url("images/trash.png")'; 
     delete_button.style.width = "25px";
@@ -28,8 +30,25 @@ function post_init(title, date, summary){
         dialog_area.innerHTML = "";
         const clone = template.content.cloneNode(true);
         dialog_area.appendChild(clone);
+        
         const dialog_opener = document.getElementById("custom_dialog");
         dialog_opener.show();
+
+        // Styling for the dialog form
+        dialog_opener.style.width = "400px";
+        dialog_opener.style.border = "2px solid gray";
+        dialog_opener.style.borderRadius = "5px";
+    
+        const inputElements = dialog_opener.querySelectorAll("input, textarea");
+        inputElements.forEach((inputElement) => {
+            inputElement.style.display = "block";
+            inputElement.style.width = "100%";
+            inputElement.style.marginBottom = "10px";
+            inputElement.style.padding = "5px";
+            inputElement.style.fontSize = "15px";
+            inputElement.style.border = "1px solid gray";
+            inputElement.style.borderRadius = "5px";
+        });    
 
         const original_title = post_text.title;
 

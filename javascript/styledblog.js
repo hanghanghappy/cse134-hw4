@@ -57,7 +57,7 @@ function create_post(){
         inputElement.style.fontSize = "15px";
         inputElement.style.border = "1px solid gray";
         inputElement.style.borderRadius = "5px";
-      });
+    });
 
     const save_button = document.getElementById("save");
     const cancel_button = document.getElementById("cancel");
