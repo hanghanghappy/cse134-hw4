@@ -15,6 +15,7 @@ function post_init(title, date, summary){
     const delete_button = document.createElement("button");
     delete_button.innerHTML = "Delete";
 
+    // This function opens a dialog box where the user can edit the post
     edit_button.addEventListener("click", () => {
         const template = document.getElementById("dialog_template");
         const dialog_area = document.getElementById("dialog_area");
@@ -32,6 +33,7 @@ function post_init(title, date, summary){
             const date = document.getElementById("date");
             const summary = document.getElementById("summary");
 
+            // If the edited title is the same, skip the check for existing titles in localStorage
             if (original_title == title.value){
                 localStorage.removeItem(post_text.title);
                 const arr = [title.value, date.value, summary.value];
@@ -45,7 +47,10 @@ function post_init(title, date, summary){
                 temp_msg.innerHTML = "";
             }
             else{
+                // Checking if the post title exists in localStorage
                 if (!checkDuplicate(title.value)){
+
+                    // Saving the edited post
                     localStorage.removeItem(post_text.title);
                     const arr = [title.value, date.value, summary.value];
                     localStorage.setItem(title.value, JSON.stringify(arr));
@@ -56,6 +61,7 @@ function post_init(title, date, summary){
                     dialog_opener.innerHTML = "";
                 }
                 else{
+                    // Displaying an error message if the post title already exists
                     const template = document.getElementById("duplicate_template");
                     const temp_msg = document.getElementById("temp_msg");
                     temp_msg.innerHTML = "";
@@ -80,7 +86,8 @@ function post_init(title, date, summary){
             temp_msg.innerHTML = "";
         })
     })
-        
+    
+    // This function removes the post from the list of posts and from localStorage
     delete_button.addEventListener("click", () => {
         localStorage.removeItem(post_text.title);
         li.remove();
@@ -88,7 +95,7 @@ function post_init(title, date, summary){
         dialog_opener.innerHTML = "";
     })
 
-
+    // Add the post to the container
     li.appendChild(post_text);
     li.appendChild(edit_button);
     li.appendChild(delete_button);
