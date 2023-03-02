@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/DOMPurify-main/dist/purify.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+
+        function init() {
+            const alert_button = document.getElementById("alert");
+            const confirm_button = document.getElementById("confirm");
+            const prompt_button = document.getElementById("prompt");
+            const safer_prompt_button = document.getElementById("safer-prompt");
+
+            alert_button.addEventListener("click", () => {
+                alert("Alert clicked!");
+            });
+
+            confirm_button.addEventListener("click", () => {
+                let confirmValue = confirm("Do you confirm this?");
+                const outputElement = document.getElementById("output");
+                outputElement.innerHTML = `The value returned by the confirm method is: ${confirmValue}`;
+            });
+
+            prompt_button.addEventListener("click", () => {
+                let input = prompt("Enter a message");
+                if (input == "" || input == null) {
+                    const outputElement = document.getElementById("output");
+                    outputElement.innerHTML = "User didn’t enter anything";
+                }
+                else {
+                    const outputElement = document.getElementById("output");
+                    outputElement.innerHTML = `The value returned by the prompt method is: ${input}`;
+                }
+            });
+
+            safer_prompt_button.addEventListener("click", () => {
+                let input = DOMPurify.sanitize(prompt("Enter a message"));
+                if (input == "" || input == null) {
+                    const outputElement = document.getElementById("output");
+                    outputElement.innerHTML = "User didn’t enter anything";
+                }
+                else {
+                    const outputElement = document.getElementById("output");
+                    outputElement.innerHTML = `The value returned by the prompt method is: ${input}`;
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Native Dialogs</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+        <button id="safer-prompt">Safer Prompt</button>
+        <output id="output"></output>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/DOMPurify-main/dist/purify.js"></script>
+    <script type="module">
+        import {alert_button, confirm_button, prompt_button} from "./javascript/customdialog.js";
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Custom Dialogs</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+
+        <dialog id="custom_dialog"></dialog>
+        <output id="output"></output>
+    </main>
+</body>
+
+</html>
