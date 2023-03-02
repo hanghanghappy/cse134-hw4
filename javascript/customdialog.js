@@ -97,7 +97,12 @@ prompt_button.addEventListener("click", () => {
         dialog.innerHTML = "";
         dialog.close();
         const outputElement = document.getElementById("output");
-        outputElement.innerHTML = `The value returned by the prompt method is: ${DOMPurify.sanitize(user_input.value)}`;
+        if (user_input.value == "" || user_input.value == null){
+            outputElement.innerHTML = "User didn’t enter anything";
+        }
+        else{
+            outputElement.innerHTML = `The value returned by the prompt method is: ${DOMPurify.sanitize(user_input.value)}`;
+        }
     })
 
     dialog.show();
