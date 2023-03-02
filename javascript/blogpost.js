@@ -1,6 +1,11 @@
+// This function creates a new blog post and adds it to the list of posts
 function post_init(title, date, summary){
+
+    // Get the container for the list of posts
     const blogs = document.getElementById("blogs");
     let li = document.createElement("li");
+
+    // Create a <p> element to display the title, date, and summary of the post
     const post_text = document.createElement("p");
     post_text.title = title;
     post_text.innerHTML = `${title} (${date})` + "<br>" +  `${summary}`;
@@ -90,6 +95,7 @@ function post_init(title, date, summary){
     blogs.appendChild(li);
 }
 
+// This function checks if a blog post with the same title already exists in localStorage
 function checkDuplicate(title){
     for (let i = 0; i < localStorage.length; i++){
         const key = localStorage.key(i);
